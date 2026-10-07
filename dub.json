@@ -1,0 +1,12 @@
+{
+	"description": "A minimal D application.",
+	"dependencies": {
+		"bindbc-sdl": "~>2.2.0"
+	},
+	"authors": [
+		"hridhay"
+	],
+	"copyright": "Copyright © 2026, Hridhay",
+	"license": "proprietary",
+	"name": "prog"
+}
