@@ -1,4 +1,6 @@
-/// This module contains several vec data types.
+// This module contains several vec data types.
+// This module came from PSET #5 from Real-Time 3D Graphics.
+
 module vec;
 
 import std.stdio, std.math, std.conv, std.traits;
@@ -7,26 +9,32 @@ import std.stdio, std.math, std.conv, std.traits;
 // Note: Most commonly we use 'float' type for vec2, so I omit the suffix.
 //		 This is consistent with the matrix data types. 
 alias vec2 =  Vec2!float;
+alias vec2f = Vec2!float;
 alias vec2i = Vec2!int;
 alias vec2d = Vec2!double;	// TODO: Consider a better suffix for double
 							// Alias 'Point2' for the 'Vec2' type.
-alias Point2f = vec2;
+alias Point2 = vec2;
+alias Point2f = vec2f;
 alias Point2i = vec2i;
 alias Point2d = vec2d;
 
 alias vec3 =  Vec3!float;
+alias vec3f = Vec!float;
 alias vec3i = Vec3!int;
 alias vec3d = Vec3!double;	// TODO: Consider a better suffix for double
 							// Alias 'Point2' for the 'Vec2' type.
-alias Point3f = vec3;
+alias Point3 = vec3;
+alias Point3f = vec3f;
 alias Point3i = vec3i;
 alias Point3d = vec3d;
 
 alias vec4 =  Vec4!float;
+alias vec4f = Vec4!float;
 alias vec4i = Vec4!int;
 alias vec4d = Vec4!double;	// TODO: Consider a better suffix for double
 							// Alias 'Point2' for the 'Vec2' type.
-alias Point4f = vec4;
+alias Point4 = vec4;
+alias Point4f = vec4f;
 alias Point4i = vec4i;
 alias Point4d = vec4d;
 
@@ -202,7 +210,6 @@ if(__traits(isIntegral,T) || __traits(isFloating,T)) {
 		}
 	}
 
-
 	// Return the slope of the vector
 	// If x is zero, return 0.0
 	double GetSlope(){
@@ -363,7 +370,7 @@ struct Vec3(T=float)
 		double xx = x*x;
 		double yy = y*y;
 		double zz = z*z;
-		return sqrt(xx + yy +zz);
+		return sqrt(xx + yy + zz);
 	}
 
 	// Normalize vector
@@ -538,7 +545,7 @@ struct Vec4(T=float)
 		double yy = y*y;
 		double zz = z*z;
 		double ww = w*w;
-		return sqrt(xx + yy + zz +ww);
+		return sqrt(xx + yy + zz + ww);
 	}
 
 	// Normalize vector
@@ -768,7 +775,6 @@ T Distance(T=float)(Vec4!T a, Vec4!T b){
 }
 
 
- 
 // Other functions
 
 float DegreesToRadians(float degree){
