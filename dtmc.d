@@ -3,7 +3,7 @@ import std.stdio, std.math, std.conv, std.typecons, std.traits, std.random;
 import bindbc.opengl;
 import vec, utility, mat;
 
-class Mat(T=GLfloat, size_t N=0, size_t length=0, size_t width=0){
+class DTMC(T=GLfloat, size_t N=0, size_t length=0, size_t width=0){
     T[N][N] mat;   
     ulong[length][width] grid = 0;
     ulong curr_state = 1;
