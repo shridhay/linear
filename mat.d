@@ -27,7 +27,7 @@ alias mat3i = Mat3!int;
 alias mat3d = Mat3!double;
 
 alias mat4  = Mat4!float;
-alias mat4  = Mat4!float;
+alias mat4f  = Mat4!float;
 alias mat4i = Mat4!int;
 alias mat4d = Mat4!double;
 
