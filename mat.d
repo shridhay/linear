@@ -22,9 +22,11 @@ auto IsMat3x3orMat4x4(T)(){
 // NOTE: The aliases are 'lowercase' to match what is in the glsl language.
 //		 Otherwise type follows my usual convention of uppercase
 alias mat3  = Mat3!float;
+alias mat3f = Mat3!float;
 alias mat3i = Mat3!int;
 alias mat3d = Mat3!double;
 
+alias mat4  = Mat4!float;
 alias mat4  = Mat4!float;
 alias mat4i = Mat4!int;
 alias mat4d = Mat4!double;
@@ -106,11 +108,11 @@ struct Mat3(T=float){
 	T[3] opIndex(size_t col){
 		if(col==0){
 			return [e[0],e[3],e[6]];
-		}else	if(col==1){
+		} else if(col==1){
 			return [e[1],e[4],e[7]];
-		}else if (col==2){
+		} else if (col==2){
 			return [e[2],e[5],e[8]];
-		}else{
+		} else {
 			assert(0,"illegal column specified, expected 0,1,2, received: "~col.to!string);
 		}
 	}
@@ -329,13 +331,13 @@ struct Mat4(T=float){
 	T[4] opIndex(size_t col){
 		if(col==0){
 			return [e[0],e[4],e[8],e[12]];
-		} else if(col==1){
+		}else	if(col==1){
 			return [e[1],e[5],e[9],e[13]];
-		} else if (col==2){
+		}else if (col==2){
 			return [e[2],e[6],e[10],e[14]];
-		} else if (col==3){
+		}else if (col==3){
 			return [e[3],e[7],e[11],e[15]];
-		} else {
+		}else{
 			assert(0,"illegal column specified, expected 0,1,2,3 received: "~col.to!string);
 		}
 	}
@@ -860,7 +862,7 @@ void MatrixVectorDebugPrint(T=float)(string name1, Mat4!T m, string name2, Vec4!
 	for(int i=0; i < 4; i++){
 		if(i!=2){
 			writeln(m.Row(i),"\t",v[i]);
-		}else{
+		} else {
 			writeln(m.Row(i)," (op)\t",v[i]);
 		}
 	}
